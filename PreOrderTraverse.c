@@ -1,17 +1,17 @@
 #include "CreateBiTree.c"
-Status PreOrderTraverse(BiTree T)
+void Visit(BiTree T)
+{
+	if(T->data != ' ')
+	{
+		printf("%c ",T->data);
+	}
+} 
+void PreOrderTraverse(BiTree T)
 {
 	if(T != NULL)
 	{
-		if(T->data != ' ')
-		{
-			printf("%c",T->data);
-			if(PreOrderTraverse(T->lchild))
-				if(PreOrderTraverse(T->rchild))
-					return OK;
-		}
-		return ERROR;	
+		Visit(T);
+		PreOrderTraverse(T->lchild);
+		PreOrderTraverse(T->rchild);
 	}
-	else
-		return OK;
 }
