@@ -1,4 +1,4 @@
-#include "CreateBiTree.c"
+#include "basic.c"
 void Visit(BiTree T)
 {
 	if(T->data != ' ')
@@ -6,12 +6,14 @@ void Visit(BiTree T)
 		printf("%c ",T->data);
 	}
 } 
-void PreOrderTraverse(BiTree T)
+Status PreOrderTraverse(BiTree T)
 {
 	if(T != NULL)
 	{
 		Visit(T);
 		PreOrderTraverse(T->lchild);
 		PreOrderTraverse(T->rchild);
+		return OK;
 	}
+	return ERROR;
 }
