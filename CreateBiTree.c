@@ -4,7 +4,7 @@ Status CreateBiTree(BiTree *T)
 	char ch;
 	scanf("%c",&ch);
 	if(ch == ' ')
-		T = NULL;
+		*T = NULL;
 	else
 	{
 		if(!(*T = (BiTNode *)malloc(sizeof(BiTNode))))
